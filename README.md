@@ -1,4 +1,4 @@
-Mini-Crawl
+Artifactor
 ==========
 
 A dungeon crawler.
