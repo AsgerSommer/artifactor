@@ -9,6 +9,3 @@
 /dataSources/
 /dataSources.local.xml
 # more
-.DS_Store
-._*
-bin/
