@@ -5,9 +5,11 @@ local player = {
 }
 
 -- Grid cell size and offset
-local CELL_SIZE = 50
-local GRID_OFFSET_X = 300
-local GRID_OFFSET_Y = 200
+local GRID_SIZE_X = 12
+local GRID_SIZE_Y = 12
+local CELL_SIZE = 40
+local GRID_OFFSET_X = 50
+local GRID_OFFSET_Y = 50
 local canMove = true
 
 function love.load()
@@ -20,19 +22,19 @@ function love.keypressed(key)
         if key == 'up' then
             player.y = math.max(1, player.y - 1)
         elseif key == 'down' then
-            player.y = math.min(3, player.y + 1)
+            player.y = math.min(GRID_SIZE_Y, player.y + 1)
         elseif key == 'left' then
             player.x = math.max(1, player.x - 1)
         elseif key == 'right' then
-            player.x = math.min(3, player.x + 1)
+            player.x = math.min(GRID_SIZE_X, player.x + 1)
         end
     end
 end
 
 function love.draw()
     -- Draw the 3x3 grid
-    for row = 1, 3 do
-        for col = 1, 3 do
+    for row = 1, GRID_SIZE_X do
+        for col = 1, GRID_SIZE_Y do
             love.graphics.setColor(0.3, 0.3, 0.3)
             love.graphics.rectangle(
                     'line',
